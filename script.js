@@ -13,7 +13,18 @@ let prom3 = new Promise((resolve,reject)=>{
 		reject("rohit");
 	},1000)
 })
-	window.promises = [prom1,prom2,prom3];
+let prom4 = new Promise((resolve,reject)=>{
+	setTimeout(()=>{
+		reject("abc");
+	},1000)
+})
+let prom5 = new Promise((resolve,reject)=>{
+	setTimeout(()=>{
+		reject("ab");
+	},1000)
+})
+
+	window.promises = [prom1,prom2,prom3,prom4,prom5];
 let x = Promise.any(promises);
 x.then((data)=>{
 	output.textContent = data;
